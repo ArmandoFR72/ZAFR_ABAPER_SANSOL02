@@ -1,0 +1,17 @@
+projection implementation in class ZBP_C_AFR_SS_TA_ARTS2 unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_AFR_SS_TA_ARTS2 alias ZcAfrSsTaArts2
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

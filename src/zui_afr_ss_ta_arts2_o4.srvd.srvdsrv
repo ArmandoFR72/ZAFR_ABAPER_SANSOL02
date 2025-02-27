@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_AFR_SS_TA_ARTS2'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_AFR_SS_TA_ARTS2'
+  }
+}
+define service ZUI_AFR_SS_TA_ARTS2_O4 provider contracts odata_v4_ui {
+  expose ZC_AFR_SS_TA_ARTS2;
+}

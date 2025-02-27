@@ -1,0 +1,54 @@
+managed implementation in class ZBP_R_AFR_SS_TA_ARTS2 unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_AFR_SS_TA_ARTS2 alias ZrAfrSsTaArts2
+persistent table ZAFR_SS_TA_ARTS2
+draft table ZAFR_SS_TA_ART_D
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Id;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Id;
+
+
+  create;
+  update;
+  delete;
+
+  //Agregamos esta línea para que realice la validación.
+  validation stockValidion on save { create; update; field stock; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAFR_SS_TA_ARTS2
+  {
+    Id = id;
+    Descrip = descrip;
+    Descadi = descadi;
+    Color = color;
+    Piezas = piezas;
+    Stock = stock;
+    Url = url;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

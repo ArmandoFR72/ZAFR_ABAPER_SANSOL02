@@ -1,0 +1,213 @@
+//@Metadata.layer: #CORE
+//@UI.headerInfo.title.type: #STANDARD
+//@UI.headerInfo.title.value: 'Id'
+//@UI.headerInfo.description.type: #STANDARD
+//@UI.headerInfo.description.value: 'Id'
+//annotate view ZC_AFR_SS_TA_ARTS2 with
+//{
+//  @UI.facet: [ {
+//    label: 'General Information', 
+//    id: 'GeneralInfo', 
+//    purpose: #STANDARD, 
+//    position: 10 , 
+//    type: #IDENTIFICATION_REFERENCE
+//  } ]
+//  @UI.identification: [ {
+//    position: 10 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+//  Id;
+//  
+//  @UI.identification: [ {
+//    position: 20 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 20 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 20 
+//  } ]
+//  Descrip;
+//  
+//  @UI.identification: [ {
+//    position: 30 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 30 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 30 
+//  } ]
+//  Descadi;
+//  
+//  @UI.identification: [ {
+//    position: 40 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 40 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 40 
+//  } ]
+//  Color;
+//  
+//  @UI.identification: [ {
+//    position: 50 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 50 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 50 
+//  } ]
+//  Piezas;
+//  
+//  @UI.identification: [ {
+//    position: 60 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 60 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 60 
+//  } ]
+//  Stock;
+//  
+//  @UI.identification: [ {
+//    position: 70 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 70 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 70 
+//  } ]
+//  Url;
+//  
+//  @UI.identification: [ {
+//    position: 80 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 80 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 80 
+//  } ]
+//  LocalCreatedBy;
+//  
+//  @UI.identification: [ {
+//    position: 90 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 90 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 90 
+//  } ]
+//  LocalCreatedAt;
+//  
+//  @UI.identification: [ {
+//    position: 100 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 100 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 100 
+//  } ]
+//  LocalLastChangedBy;
+//  
+//  @UI.identification: [ {
+//    position: 110 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 110 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 110 
+//  } ]
+//  LocalLastChangedAt;
+//  
+//  @UI.identification: [ {
+//    position: 120 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 120 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 120 
+//  } ]
+//  LastChangedAt;
+//}
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { 
+    typeName: 'Articulo AFR1',
+    typeNamePlural: 'Articulos AFR1',
+    typeImageUrl: '',
+    imageUrl: 'Url',
+    title: { 
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    },
+    description: { 
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    }
+}
+
+
+
+annotate entity ZC_AFR_SS_TA_ARTS2 with 
+{
+    @UI.facet: [{ id: 'DetArt', label: 'Detalle Articulo', type: #COLLECTION, position: 10 },
+                { id: 'Articulo', parentId: 'DetArt', label: 'Detalles', type: #FIELDGROUP_REFERENCE,
+                  targetQualifier: 'DetArt', position: 10 }
+    ]
+    
+    //@UI.hidden: true
+    //client;
+    @UI.lineItem: [{ position: 10, importance: #HIGH }]
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 10 }]
+    @UI.selectionField: [ { position: 10 } ]
+    Id;
+    @UI.lineItem: [{ position: 20, importance: #HIGH }]
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 20 }]
+    @UI.selectionField: [ { position: 20 } ]
+    Descrip;
+    //descadi;
+    @UI.lineItem: [{ position: 30, importance: #HIGH }]
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 30 }]
+    Stock;
+    //@UI.lineItem: [{ position: 40, importance: #HIGH, criticality: 'status' }]
+    //status;
+    
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 40 }]
+    Descadi;
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 50 }]
+    @UI.selectionField: [ { position: 30 } ]
+    Color;
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 60 }]
+    Piezas;
+    @UI.fieldGroup: [{ qualifier: 'DetArt', position: 70 }]
+    Url;
+}
